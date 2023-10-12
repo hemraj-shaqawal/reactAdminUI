@@ -10,17 +10,12 @@ import userContext from './Utils/UserContext';
 
 // Lazy router
 const Home = lazy(() => import("./components/Home"))
-const About = lazy(() => import("./components/About"))
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (<Suspense fallback={<h1>Loading...</h1>}><Home/></Suspense>),
     children: []
-  },
-  { 
-    path: '/about',
-    element: <Suspense fallback={<h1>Loading...</h1>}><About/></Suspense>
   }
 ])
 
